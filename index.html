@@ -1,0 +1,269 @@
+<!DOCTYPE html> 
+<html lang="uk">
+    <head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оренда спортивного обладнання</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #333;
+            text-align: center;
+        }
+        /* Верхній футер */
+        .top-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #feffff;
+            padding: 10px 20px;
+            color: rgb(17, 16, 16);
+        }
+        .top-footer .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .top-footer .search-bar {
+            flex: 1;
+            margin: 0 20px;
+        }
+        .top-footer input {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+        }
+        .top-footer .icons {
+            display: flex;
+            gap: 15px;
+        }
+        .top-footer a {
+            color: rgb(9, 9, 9);
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .top-footer a:hover {
+            color: #dc353d;
+        }
+        .image-container {
+            width: 100%;
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #0056b3;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 12px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        .filter-buttons {
+            margin: 20px;
+        }
+        .filter-buttons button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .filter-buttons button:hover {
+            background: #0056b3;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+        .item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: auto; 
+            min-height: 300px;
+            width: 280px;
+            margin: auto;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .item:hover {
+            transform: scale(1.05);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .item img {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .schedule {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Верхній футер -->
+    <div class="top-footer">
+        <div class="logo">SportX </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Пошук...">
+        </div>
+        <div class="icons">
+            <a href="#">🛒 Кошик</a>
+            <a href="#">🔑 Реєстрація</a>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="D:\nastia\.vscode\Veb\baner.jpg" alt="Зображення">
+    </div>
+
+
+    <main>
+        <section id="equipment">
+            <h2>Оберіть обладнання</h2>
+
+            <div class="filter-buttons">
+                <button onclick="filterItems('all')">Усі</button>
+                <button onclick="filterItems('ski')">Лижне спорядження</button>
+                <button onclick="filterItems('bike')">Велоспорт</button>
+                <button onclick="filterItems('clothes')">Одяг</button>
+            </div>
+
+            <div class="grid">
+                <div class="item ski">
+                    <img src="https://sportano.ua/img/986c30c27a3d26a3ee16c136f92f4ff5/1/9/195751613422_40-jpg/girs-ki-lizhi-salomon-s-max-4-kriplennja-m10-gw-bili-bezpechni-zhovti-chorni-1235557.jpg" alt="Лижі">
+                    <h3>Лижі</h3>
+                    <p>Ціна: 500 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item ski">
+                    <img src="https://northwall.com.ua/published/publicdata/DB1/attachments/SC/products_pictures/stratosqy.jpg" alt="Сноуборд">
+                    <h3>Сноуборд</h3>
+                    <p>Ціна: 600 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item ski">
+                    <img src="https://sportano.ua/img/986c30c27a3d26a3ee16c136f92f4ff5/8/4/841049178554_19-jpg/snoubord-ditjachij-roxy-poppy-kriplennja-poppy-traditional-s-1362521.jpg" alt="Сноуборд">
+                    <h3>Сноуборд</h3>
+                    <p>Ціна: 700 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item ski">
+                    <img src="https://shop.wakepark.by/image/cache/catalog/luckyboo/snoubord-luckyboo-%E2%80%93-snow-monster-cherno-zheltyi%CC%86-800x800.jpg" alt="Сноуборд дитячий">
+                    <h3>Сноуборд дитячий</h3>
+                    <p>Ціна: 500 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item bike">
+                    <img src="https://velopodium.com.ua/content/images/40/536x335l50nn0/velosiped-formula-motion-dd-27.5-73877134576820.jpg" alt="Велосипед">
+                    <h3>Велосипед</h3>
+                    <p>Ціна: 400 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item bike">
+                    <img src="https://images.prom.ua/4287812947_w600_h600_4287812947.jpg" alt="Велосипед дитячий">
+                    <h3>Велосипед дитячий</h3>
+                    <p>Ціна: 400 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item clothes">
+                    <img src="https://cdn.4f.com.pl/media/catalog/product/cache/b6003fe37ea5e56d4b26f0099314aec5/4/F/4FWAW24TTJAF593-11S-M-03-MAIN.jpg" alt="Жіноча куртка">
+                    <h3>Жіноча куртка</h3>
+                    <p>Ціна: 400 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item clothes">
+                    <img src="https://safari-ukraina.com/image/cache/catalog/image/cache/catalog/product/marmot/kurtka-marmot-mens-MRT-30400.1452_0-1000x1000.webpg" alt="Чоловіча куртка">
+                    <h3>Чоловіча куртка</h3>
+                    <p>Ціна: 400 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item clothes">
+                    <img src="https://content.rozetka.com.ua/goods/images/big/286177354.jpg" alt="Дитяча куртка">
+                    <h3>Дитяча куртка</h3>
+                    <p>Ціна: 400 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+        
+            </div>
+        </section>
+    </main>
+
+    <section class="schedule">
+        <h2>Графік роботи</h2>
+        <p>Субота, неділя: <strong>з 10:00 до 18:00</strong>.</p>
+        <p>Будні дні: <strong>з 10:00 до 20:00</strong>.</p>
+    </section>
+
+    <footer>
+        <p>Контактна інформація: +380 99 123 45 67 | Email: info@sport-rental.ua</p>
+    </footer>
+
+    <script>
+        function filterItems(category) {
+            let items = document.querySelectorAll('.item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
