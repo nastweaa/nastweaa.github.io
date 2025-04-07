@@ -1,20 +1,169 @@
 <!DOCTYPE html> 
 <html lang="uk">
-<head> 
+    <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Оренда спортивного обладнання</title>   
-    <link rel="stylesheet" href="main.css" />
+    <title>Оренда спортивного обладнання</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #333;
+            text-align: center;
+        }
+        /* Верхній футер */
+        .top-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #feffff;
+            padding: 10px 20px;
+            color: rgb(17, 16, 16);
+        }
+        .top-footer .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .top-footer .search-bar {
+            flex: 1;
+            margin: 0 20px;
+        }
+        .top-footer input {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+        }
+        .top-footer .icons {
+            display: flex;
+            gap: 15px;
+        }
+        .top-footer a {
+            color: rgb(9, 9, 9);
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .top-footer a:hover {
+            color: #dc353d;
+        }
+        .image-container {
+            width: 100%;
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #0056b3;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 12px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        .filter-buttons {
+            margin: 20px;
+        }
+        .filter-buttons button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .filter-buttons button:hover {
+            background: #0056b3;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+        .item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: auto; 
+            min-height: 300px;
+            width: 280px;
+            margin: auto;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .item:hover {
+            transform: scale(1.05);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .item img {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .schedule {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
+    <!-- Верхній футер -->
     <div class="top-footer">
         <div class="logo">SportX </div>
         <div class="search-bar">
             <input type="text" placeholder="Пошук...">
         </div>
         <div class="icons">
-            <a href="#" id="cart-toggle">🛒 Кошик</a>
+            <a href="#">🛒 Кошик</a>
             <a href="#">🔑 Реєстрація</a>
         </div>
     </div>
@@ -27,16 +176,73 @@
     <main>
         <section id="equipment">
             <h2>Оберіть обладнання</h2>
+
             <div class="filter-buttons">
                 <button onclick="filterItems('all')">Усі</button>
                 <button onclick="filterItems('ski')">Лижне спорядження</button>
                 <button onclick="filterItems('bike')">Велоспорт</button>
                 <button onclick="filterItems('clothes')">Одяг</button>
             </div>
-            <div class="grid"></div>
+
+            <div class="grid">
+                <div class="item ski">
+                    <img src="https://sportano.ua/img/986c30c27a3d26a3ee16c136f92f4ff5/1/9/195751613422_40-jpg/girs-ki-lizhi-salomon-s-max-4-kriplennja-m10-gw-bili-bezpechni-zhovti-chorni-1235557.jpg" alt="Лижі">
+                    <h3>Лижі</h3>
+                    <p>Ціна: 500 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item ski">
+                    <img src="https://northwall.com.ua/published/publicdata/DB1/attachments/SC/products_pictures/stratosqy.jpg" alt="Сноуборд">
+                    <h3>Сноуборд</h3>
+                    <p>Ціна: 600 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item ski">
+                    <img src="https://sportano.ua/img/986c30c27a3d26a3ee16c136f92f4ff5/8/4/841049178554_19-jpg/snoubord-ditjachij-roxy-poppy-kriplennja-poppy-traditional-s-1362521.jpg" alt="Сноуборд">
+                    <h3>Сноуборд</h3>
+                    <p>Ціна: 700 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item ski">
+                    <img src="https://shop.wakepark.by/image/cache/catalog/luckyboo/snoubord-luckyboo-%E2%80%93-snow-monster-cherno-zheltyi%CC%86-800x800.jpg" alt="Сноуборд дитячий">
+                    <h3>Сноуборд дитячий</h3>
+                    <p>Ціна: 500 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item bike">
+                    <img src="https://velopodium.com.ua/content/images/40/536x335l50nn0/velosiped-formula-motion-dd-27.5-73877134576820.jpg" alt="Велосипед">
+                    <h3>Велосипед</h3>
+                    <p>Ціна: 400 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item bike">
+                    <img src="https://images.prom.ua/4287812947_w600_h600_4287812947.jpg" alt="Велосипед дитячий">
+                    <h3>Велосипед дитячий</h3>
+                    <p>Ціна: 400 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item clothes">
+                    <img src="https://cdn.4f.com.pl/media/catalog/product/cache/b6003fe37ea5e56d4b26f0099314aec5/4/F/4FWAW24TTJAF593-11S-M-03-MAIN.jpg" alt="Жіноча куртка">
+                    <h3>Жіноча куртка</h3>
+                    <p>Ціна: 400 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item clothes">
+                    <img src="https://content2.rozetka.com.ua/goods/images/big/484737005.jpg" alt="Чоловіча куртка">
+                    <h3>Чоловіча куртка</h3>
+                    <p>Ціна: 400 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+                </div>
+                <div class="item clothes">
+                    <img src="https://content.rozetka.com.ua/goods/images/big/286177354.jpg" alt="Дитяча куртка">
+                    <h3>Дитяча куртка</h3>
+                    <p>Ціна: 400 грн/день</p>
+                    <a href="#" class="button">Забронювати</a>
+        
+            </div>
         </section>
     </main>
-    
+
     <section class="schedule">
         <h2>Графік роботи</h2>
         <p>Субота, неділя: <strong>з 10:00 до 18:00</strong>.</p>
@@ -47,299 +253,17 @@
         <p>Контактна інформація: +380 99 123 45 67 | Email: info@sport-rental.ua</p>
     </footer>
 
-    <div id="cart-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="cart-close">&times;</span>
-            <h2>Ваш кошик</h2>
-            <div id="cart-list">
-                <p>Кошик порожній.</p>
-            </div>
-            <div id="cart-total" style="text-align: right; margin-top: 20px; font-size: 18px; font-weight: bold;">
-                Загальна сума: 0 грн
-            </div>
-            <div style="text-align: right; margin-top: 20px;">
-                <button id="checkout-btn" style="padding: 10px 20px; font-size: 16px; border: none; border-radius: 6px; background-color: #007bff; color: white; cursor: pointer;">
-                    🛍️ Оформити замовлення
-                </button>
-            </div>
-        </div>
-    </div>
-    
-
     <script>
-        const equipmentData = [
-            {
-                name: "Лижі",
-                price: 500,
-                category: "ski",
-                image: "https://sportano.ua/img/986c30c27a3d26a3ee16c136f92f4ff5/1/9/195751613422_40-jpg/girs-ki-lizhi-salomon-s-max-4-kriplennja-m10-gw-bili-bezpechni-zhovti-chorni-1235557.jpg"
-            },
-            {
-                name: "Сноуборд",
-                price: 600,
-                category: "ski",
-                image: "https://northwall.com.ua/published/publicdata/DB1/attachments/SC/products_pictures/stratosqy.jpg"
-            },
-            {
-                name: "Сноуборд дитячий",
-                price: 500,
-                category: "ski",
-                image: "https://shop.wakepark.by/image/cache/catalog/luckyboo/snoubord-luckyboo-%E2%80%93-snow-monster-cherno-zheltyi%CC%86-800x800.jpg"
-            },
-            {
-                name: "Велосипед",
-                price: 400,
-                category: "bike",
-                image: "https://velopodium.com.ua/content/images/40/536x335l50nn0/velosiped-formula-motion-dd-27.5-73877134576820.jpg"
-            },
-            {
-                name: "Велосипед дитячий",
-                price: 400,
-                category: "bike",
-                image: "https://images.prom.ua/4287812947_w600_h600_4287812947.jpg"
-            },
-            {
-                name: "Жіноча куртка",
-                price: 400,
-                category: "clothes",
-                image: "https://cdn.4f.com.pl/media/catalog/product/cache/b6003fe37ea5e56d4b26f0099314aec5/4/F/4FWAW24TTJAF593-11S-M-03-MAIN.jpg"
-            },
-            {
-                name: "Чоловіча куртка",
-                price: 400,
-                category: "clothes",
-                image: "https://content2.rozetka.com.ua/goods/images/big/484737005.jpg"
-            },
-            {
-                name: "Дитяча куртка",
-                price: 400,
-                category: "clothes",
-                image: "https://content.rozetka.com.ua/goods/images/big/286177354.jpg"
-            }
-        ];
-
-        const grid = document.querySelector(".grid");
-
-let i = 0;
-do {
-    const item = equipmentData[i];
-    const div = document.createElement("div");
-    div.className = `item ${item.category}`;
-    div.innerHTML = `
-        <img src="${item.image}" alt="${item.name}">
-        <h3>${item.name}</h3>
-        <p>Ціна: ${item.price} грн/день</p>
-        <label>Початок: <input type="date" class="start-date"></label>
-        <label>Кінець: <input type="date" class="end-date"></label>
-
-        <button class="rent-btn">Орендувати</button>
-    `;
-    grid.appendChild(div);
-
-    const today = new Date().toISOString().split("T")[0];
-    div.querySelector(".start-date").setAttribute("min", today);
-    div.querySelector(".end-date").setAttribute("min", today);
-
-    i++;
-} while (i < equipmentData.length);
-
-// Масив з товарів у кошику
-const cart = [];
-
-//Форматує дату з формату 2025-03-25 у вигляд 25.03.2025
-function formatDate(dateString) {
-    const [year, month, day] = dateString.split("-");
-    return `${day}.${month}.${year}`;
-}
-
-//Очищає, проходить по товарах
-function updateCartUI() {
-    const cartList = document.getElementById("cart-list");
-    cartList.innerHTML = "";
-
-    if (cart.length === 0) {
-        cartList.innerHTML = "<p>Кошик порожній.</p>";
-        return;
-    }
-        // Розрахунок загальної суми
-        let total = 0;
-    cart.forEach(item => {
-        const price = parseFloat(item.price.replace(/[^\d]/g, ""));
-        const start = new Date(item.startDate);
-        const end = new Date(item.endDate);
-        const days = Math.max(1, Math.ceil((end - start) / (1000 * 60 * 60 * 24)) + 1);
-        total += price * item.quantity * days;
-    });
-    document.getElementById("cart-total").textContent = `Загальна сума: ${total} грн`;
-
-
-    cart.forEach((item, index) => {
-        const div = document.createElement("div");
-        div.classList.add("cart-item");
-        div.innerHTML = `
-            <div style="display: flex; align-items: center; gap: 16px;">
-                <img src="${item.image}" alt="${item.name}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 6px;">
-                <div style="text-align: left;">
-                    <div><strong>${item.name}</strong></div>
-                    <div>Оренда: ${formatDate(item.startDate)} — ${formatDate(item.endDate)}</div>
-                    <div>${item.price}</div>
-                </div>
-                <div style="margin-left: auto; display: flex; align-items: center; gap: 10px;">
-                    <button onclick="decreaseQuantity(${index})">🗑</button>
-                    <span>${item.quantity}</span>
-                    <button onclick="increaseQuantity(${index})">➕</button>
-                </div>
-            </div>
-        `;
-        cartList.appendChild(div);
-    });
-}
-
-// Збільшує або зменшує кідькість товару в кошику
-function increaseQuantity(index) {
-    cart[index].quantity += 1;
-    updateCartUI();
-}
-
-function decreaseQuantity(index) {
-    cart[index].quantity -= 1;
-    if (cart[index].quantity <= 0) {
-        cart.splice(index, 1); // Видаляємо товар
-    }
-    updateCartUI();
-}
-
-// Клік по кнопці "Орендувати"
-grid.addEventListener("click", function(e) {
-    if (e.target.classList.contains("rent-btn")) {
-        const button = e.target;
-        const itemDiv = button.closest(".item");
-        const name = itemDiv.querySelector("h3").textContent;
-        const startDate = itemDiv.querySelector(".start-date").value;
-        const endDate = itemDiv.querySelector(".end-date").value;
-
-        if (!startDate || !endDate) {
-            alert("Будь ласка, виберіть дату початку та завершення оренди.");
-            return;
+        function filterItems(category) {
+            let items = document.querySelectorAll('.item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
         }
-
-        cart.push({
-            name,
-            startDate,
-            endDate,
-            image: itemDiv.querySelector("img").src,
-            price: itemDiv.querySelector("p").textContent,
-            quantity: 1
-        });
-
-        updateCartUI();
-        document.getElementById("cart-modal").style.display = "block";
-
-        // ✅ Зміна тексту кнопки і блокування
-        button.textContent = "✅ Додано";
-        button.disabled = true;
-        button.style.backgroundColor = "#28a745"; // зелений
-    }
-});
-
-
-// Клік по "🛒 Кошик" зверху
-document.getElementById("cart-toggle").addEventListener("click", function(e) {
-    e.preventDefault();
-    if (cart.length === 0) {
-        alert("Кошик порожній.");
-        return;
-    }
-
-    updateCartUI();
-    document.getElementById("cart-modal").style.display = "block";
-    e.target.textContent = "✅ Додано";
-    e.target.disabled = true;
-});
-
-// Відкриття модального вікна "Реєстрація"
-document.querySelector(".icons a[href='#']:nth-child(2)").addEventListener("click", function (e) {
-    e.preventDefault();
-    document.getElementById("register-modal").style.display = "block";
-});
-
-// Закриття при кліку поза модалкою
-window.addEventListener("click", function (event) {
-    const registerModal = document.getElementById("register-modal");
-    if (event.target === registerModal) {
-    registerModal.style.display = "none";
-    }
-});
-
-// Форма реєстрації
-document.getElementById("register-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const fullname = formData.get("fullname");
-    const phone = formData.get("phone");
-    const email = formData.get("email");
-
-    alert(`Дякуємо за реєстрацію!\nПІБ: ${fullname}\nТелефон: ${phone}\nEmail: ${email}`);
-
-    e.target.reset();
-    document.getElementById("register-modal").style.display = "none";
-});
-
-
-
-// Фільтрація
-function filterItems(category) {
-    let items = document.querySelectorAll('.item');
-    items.forEach(item => {
-        item.style.display = (category === 'all' || item.classList.contains(category)) ? "block" : "none";
-    });
-}
-
-
-// Закриття при кліку поза модальним вікном
-window.addEventListener("click", function (event) {
-    const modal = document.getElementById("cart-modal");
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-});
     </script>
-    <div id="register-modal" class="modal">
-        <div class="modal-content">
-        <span class="close-btn" id="register-close">&times;</span>
-        <h2>Реєстрація</h2>
-        <form id="register-form">
-            <label>ПІБ:<br><input type="text" name="fullname" required></label><br><br>
-            <label>Телефон:<br><input type="tel" name="phone" required pattern="^\+380\d{9}$" placeholder="+380XXXXXXXXX"></label><br><br>
-            <label>Email:<br><input type="email" name="email" required></label><br><br>
-            <button type="submit">Зареєструватися</button>
-        </form>
-        </div>
-    </div> 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Закриття кошика
-            document.getElementById("cart-close").addEventListener("click", function () {
-                document.getElementById("cart-modal").style.display = "none";
-            });
-        
-            // Закриття реєстрації
-            document.getElementById("register-close").addEventListener("click", function () {
-                document.getElementById("register-modal").style.display = "none";
-            });
-        
-            // Клік по "Оформити замовлення"
-            document.getElementById("checkout-btn").addEventListener("click", function () {
-                document.getElementById("cart-modal").style.display = "none";
-        
-                // Умовна перевірка реєстрації
-                // Тут можна вставити перевірку, наприклад: if (!isUserLoggedIn)
-                document.getElementById("register-modal").style.display = "block";
-            });
-        });
-        </script>
-        
-        
-    
 </body>
 </html>
