@@ -13,7 +13,7 @@ import { useApp } from '../AppContext';
         <div className="icons">
             <Link to="/cart" >🛒 Кошик</Link>
             {registeredUser?.fullname ? <span >{registeredUser.fullname}</span> : <Link to="/register">🔑 Реєстрація</Link> }
-           
+               
         </div>
         </div>
     );

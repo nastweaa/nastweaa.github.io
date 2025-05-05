@@ -1,9 +1,11 @@
     import { useNavigate } from "react-router-dom";
     import { useApp } from "../AppContext";
+import { useAuth } from "../auth";
 
         export default function CartModal() {
             const navigate = useNavigate()
-            const {cart, setCart , registeredUser} = useApp()
+            const {cart, setCart } = useApp()
+            const {firebaseUser} = useAuth()
             const formatDate = (dateString) => {
             const [year, month, day] = dateString.split("-");
             return `${day}.${month}.${year}`;
@@ -45,8 +47,8 @@
         }
 
         const handleCheckout = ()=>{
-            if(!registeredUser){
-                navigate('/register')
+            if(!firebaseUser){
+                navigate('/signin')
                 return
             }
             navigate('/payment')
