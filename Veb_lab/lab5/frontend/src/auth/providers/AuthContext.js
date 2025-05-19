@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
 			setLoading(false);
 
 			if (firebaseUser) {
-				const userResponse = await fetch("http://localhost:5000/api/profile", {
+				const userResponse = await fetch("https://nastweaa-github-io.onrender.com/api/profile", {
 					method: "GET",
 					headers: {
 						Authorization: `Bearer ${firebaseUser.accessToken}`,
@@ -39,7 +39,7 @@ export function AuthProvider({ children }) {
 
 	async function signUp({ email, password }) {
 		try {
-			const response = await fetch("http://localhost:5000/api/register", {
+			const response = await fetch("https://nastweaa-github-io.onrender.com/api/register", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ email, password }),
@@ -59,7 +59,7 @@ export function AuthProvider({ children }) {
 
 	async function signIn({ email, password }) {
 		try {
-			const response = await fetch("http://localhost:5000/api/login", {
+			const response = await fetch("https://nastweaa-github-io.onrender.com/api/login", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ email, password }),
@@ -92,7 +92,7 @@ export function AuthProvider({ children }) {
 		try {
 			const token = await firebaseUser.getIdToken();
 
-			await fetch("http://localhost:5000/api/profile", {
+			await fetch("https://nastweaa-github-io.onrender.com/api/profile", {
 				method: "PUT",
 				headers: {
 					"Content-Type": "application/json",

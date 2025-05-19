@@ -25,7 +25,7 @@ export default function PaymentModal() {
 			e.preventDefault();
 			const token = await firebaseUser.getIdToken();
 
-			await fetch("http://localhost:5000/api/rentals", {
+			await fetch("https://nastweaa-github-io.onrender.com/api/rentals", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

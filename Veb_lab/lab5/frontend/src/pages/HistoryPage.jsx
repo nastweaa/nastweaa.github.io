@@ -27,7 +27,7 @@ export const HistoryPage = () => {
 					const token = await firebaseUser.getIdToken();
 					const query = `?minPrice=${minPrice}&maxPrice=${maxPrice}`;
 
-					const res = await fetch(`http://localhost:5000/api/rentals${query}`, {
+					const res = await fetch(`https://nastweaa-github-io.onrender.com/api/rentals${query}`, {
 						method: "GET",
 						headers: {
 							"Content-Type": "application/json",
